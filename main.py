@@ -13,4 +13,3 @@ def get_user(n):
     return r.json()['results']
 
 print(get_user(3))
-    
