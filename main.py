@@ -1,6 +1,5 @@
 import requests
 
-
 def requesting_multiple_users(n:int)->list:
     # url for random user
     url = f'https://randomuser.me/api/?results={n}'
@@ -15,3 +14,4 @@ def requesting_multiple_users(n:int)->list:
 
 if __name__ == '__main__':
     print(requesting_multiple_users(3))
+
