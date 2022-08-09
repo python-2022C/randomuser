@@ -1,17 +1,17 @@
 import requests
 
-# url for randomuser
-URL = "https://randomuser.me/api/"
+def requesting_multiple_users(n:int)->list:
+    # url for random user
+    url = f'https://randomuser.me/api/?results={n}'
+    # request
+    r = requests.get(url) 
+    #check status code
+    if r.status_code == 200:
+        # returs list cotainer n  users
+        return r.json()['results']
+    else:
+        return []
 
-def get_users(n: int) -> list:
-    # create query request
-    url = f"{URL}/?results={n}"
-    # get request
-    response = requests.get(url)
+if __name__ == '__main__':
+    print(requesting_multiple_users(3))
 
-    if response.status_code == 200:
-        # get users
-        users = response.json()['results']
-        return users
-    
-    return []
